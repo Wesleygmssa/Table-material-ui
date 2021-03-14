@@ -41,7 +41,9 @@ function Row(props) {
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
-        <TableCell className="ContentRegister">2020.001.000155/RG</TableCell>
+        <TableCell className="ContentRegister">
+          <a href="#">2020.001.000155/RG</a>
+        </TableCell>
         <TableCell>Salvador</TableCell>
         <TableCell>COADE</TableCell>
         <TableCell>Fauna</TableCell>
