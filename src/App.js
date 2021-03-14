@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
@@ -16,7 +17,6 @@ import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import { Container } from "./styles";
 import TablePagination from "@material-ui/core/TablePagination";
-import { Link } from "react-router-dom";
 
 const useRowStyles = makeStyles({
   root: {
@@ -44,7 +44,7 @@ function Row(props) {
           </IconButton>
         </TableCell>
         <TableCell className="ContentRegister">
-          <Link to="#">2020.001.000155/RG</Link>
+          2020.001.000155/RG
         </TableCell>
         <TableCell>Salvador</TableCell>
         <TableCell>COADE</TableCell>
