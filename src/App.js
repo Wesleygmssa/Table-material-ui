@@ -15,6 +15,7 @@ import Paper from "@material-ui/core/Paper";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import { Container } from "./styles";
+import TablePagination from "@material-ui/core/TablePagination";
 
 const useRowStyles = makeStyles({
   root: {
@@ -146,6 +147,15 @@ export default function App() {
           </TableBody>
         </Table>
       </TableContainer>
+      <TablePagination
+        rowsPerPageOptions={[5, 10, 25]}
+        component="div"
+        count={100}
+        rowsPerPage={5}
+        page={3}
+        onChangePage={() => {}}
+        onChangeRowsPerPage={() => {}}
+      />
     </Container>
   );
 }
