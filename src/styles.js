@@ -4,7 +4,7 @@ export const Container = styled.div`
   .title {
     font-family: Roboto;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 14px;
     line-height: 160%;
     letter-spacing: 0.25px;
