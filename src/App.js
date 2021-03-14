@@ -16,6 +16,7 @@ import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import { Container } from "./styles";
 import TablePagination from "@material-ui/core/TablePagination";
+import { Link } from "react-router-dom";
 
 const useRowStyles = makeStyles({
   root: {
@@ -43,7 +44,7 @@ function Row(props) {
           </IconButton>
         </TableCell>
         <TableCell className="ContentRegister">
-          <a href="#">2020.001.000155/RG</a>
+          <Link to="#">2020.001.000155/RG</Link>
         </TableCell>
         <TableCell>Salvador</TableCell>
         <TableCell>COADE</TableCell>
