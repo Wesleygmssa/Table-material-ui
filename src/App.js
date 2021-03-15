@@ -74,7 +74,7 @@ function Row(props) {
         <TableCell
           style={{ paddingBottom: 0, paddingTop: 0 }}
           colSpan={7}
-          className={`${isactive ? "active" : ""} `}
+          className={`${isactive ? "active" : ""}`}
         >
           <Collapse in={open}>
             <Box margin={0} style={{ border: "1px solid trasnparent" }}>
