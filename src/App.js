@@ -10,7 +10,6 @@ import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
@@ -53,28 +52,47 @@ function Row(props) {
     <React.Fragment>
       <Container></Container>
       <TableRow className={classes.root}>
-        <TableCell>
+        <TableCell className={`${isactive ? "active" : ""}`}>
           <IconButton
             aria-label="expand row"
             size="small"
             onClick={handleToggle}
+            className={`${isactive ? "active" : ""}`}
           >
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
-        <TableCell component="th" scope="row" className="ContentRegister">
+        <TableCell
+          className={`${isactive ? "active" : ""} ContentRegister`}
+          component="th"
+          scope="row"
+        >
           {row.registro}
         </TableCell>
-        <TableCell>{row.municipio}</TableCell>
-        <TableCell>{row.area}</TableCell>
-        <TableCell>{row.eixo}</TableCell>
-        <TableCell>{row.date}</TableCell>
-        <TableCell>{row.staus}</TableCell>
+        <TableCell className={`${isactive ? "active" : ""}`}>
+          {row.municipio}
+        </TableCell>
+        <TableCell className={`${isactive ? "active" : ""}`}>
+          {row.area}
+        </TableCell>
+        <TableCell className={`${isactive ? "active" : ""}`}>
+          {row.eixo}
+        </TableCell>
+        <TableCell className={`${isactive ? "active" : ""}`}>
+          {row.date}
+        </TableCell>
+        <TableCell className={`${isactive ? "active" : ""}`}>
+          {row.staus}
+        </TableCell>
       </TableRow>
       <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={7}>
+        <TableCell
+          style={{ paddingBottom: 0, paddingTop: 0 }}
+          colSpan={7}
+          className={`${isactive ? "active" : ""}`}
+        >
           <Collapse in={open} timeout="auto" unmountOnExit>
-            <Box margin={0}>
+            <Box margin={0} style={{ border: "1px solid trasnparent" }}>
               {/* <Typography variant="h6" gutterBottom component="div">
                 History
               </Typography> */}

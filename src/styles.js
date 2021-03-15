@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  .MuiTableRow-root {
+    border-bottom: 1px solid transparent;
+  }
   .MuiTableCell-root {
     border: 1;
   }
