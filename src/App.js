@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
@@ -39,17 +39,24 @@ function createData(registro, municipio, area, eixo, date, staus, info) {
 
 function Row(props) {
   const { row } = props;
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [isactive, setIsactive] = useState(false);
   const classes = useRowStyles();
 
+  const handleToggle = () => {
+    setOpen(!open);
+    setIsactive(!isactive);
+  };
+
+  //linhas
   return (
     <React.Fragment>
-      <TableRow className={classes.root}>
+      <TableRow className={`${isactive ? "active" : ""} `}>
         <TableCell>
           <IconButton
             aria-label="expand row"
             size="small"
-            onClick={() => setOpen(!open)}
+            onClick={handleToggle}
           >
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
@@ -64,14 +71,18 @@ function Row(props) {
         <TableCell>{row.staus}</TableCell>
       </TableRow>
       <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={7}>
-          <Collapse in={open} timeout="auto" unmountOnExit>
-            <Box margin={1}>
+        <TableCell
+          style={{ paddingBottom: 0, paddingTop: 0 }}
+          colSpan={7}
+          className={`${isactive ? "active" : ""} `}
+        >
+          <Collapse in={open}>
+            <Box margin={0} style={{ border: "1px solid trasnparent" }}>
               <Typography
+                className={` boxContent `}
                 variant="h6"
                 gutterBottom
                 component="div"
-                className="boxContent"
               >
                 {row.info}
               </Typography>
@@ -84,6 +95,7 @@ function Row(props) {
   );
 }
 
+//data
 const rows = [
   createData(
     "2020.001.000155/RG",
@@ -120,7 +132,8 @@ const rows = [
     "COFIS",
     "Fauna",
     "22/01/2021",
-    "Registrado"
+    "Registrado",
+    "Derramamento de óleo na pista"
   ),
 ];
 

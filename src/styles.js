@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  .MuiTableCell-root {
+    border: 0;
+  }
+  .active {
+    background: #f5f5f5;
+  }
   .title {
     font-family: Roboto;
     font-style: normal;
