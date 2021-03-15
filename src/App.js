@@ -52,7 +52,7 @@ function Row(props) {
   return (
     <React.Fragment>
       <Container></Container>
-      <TableRow className={(classes.root, `${isactive ? "active" : ""} `)}>
+      <TableRow className={classes.root}>
         <TableCell>
           <IconButton
             aria-label="expand row"
@@ -72,16 +72,12 @@ function Row(props) {
         <TableCell>{row.staus}</TableCell>
       </TableRow>
       <TableRow>
-        <TableCell
-          style={{ paddingBottom: 0, paddingTop: 0 }}
-          colSpan={7}
-          className={`${isactive ? "active" : ""}`}
-        >
+        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={7}>
           <Collapse in={open} timeout="auto" unmountOnExit>
-            <Box margin={0} style={{ border: "1px solid trasnparent" }}>
-              <Typography variant="h6" gutterBottom component="div">
+            <Box margin={0}>
+              {/* <Typography variant="h6" gutterBottom component="div">
                 History
-              </Typography>
+              </Typography> */}
               <Table
                 size="small"
                 aria-label="purchases"
