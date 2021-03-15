@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  .MuiTableRow-root {
+  /* .MuiTableRow-root {
     border-bottom: 1px solid transparent;
+  } */
+  .teste {
+    border-bottom: unset;
   }
   .MuiTableCell-root {
     border: 1;
