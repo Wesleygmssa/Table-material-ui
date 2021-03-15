@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   .MuiTableCell-root {
-    border: 0;
+    border: 1;
   }
   .active {
     background: #f5f5f5;
@@ -17,8 +17,9 @@ export const Container = styled.div`
     color: #424242;
   }
   .boxContent {
+    max-width: 300px;
     display: inline-block;
-    margin-left: 70px;
+    margin-left: 100px;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;

@@ -51,7 +51,8 @@ function Row(props) {
   //linhas
   return (
     <React.Fragment>
-      <TableRow className={`${isactive ? "active" : ""} `}>
+      <Container></Container>
+      <TableRow className={(classes.root, `${isactive ? "active" : ""} `)}>
         <TableCell>
           <IconButton
             aria-label="expand row"
@@ -76,17 +77,18 @@ function Row(props) {
           colSpan={7}
           className={`${isactive ? "active" : ""}`}
         >
-          <Collapse in={open}>
+          <Collapse in={open} timeout="auto" unmountOnExit>
             <Box margin={0} style={{ border: "1px solid trasnparent" }}>
-              <Typography
+              <Typography variant="h6" gutterBottom component="div">
+                History
+              </Typography>
+              <Table
+                size="small"
+                aria-label="purchases"
                 className={` boxContent `}
-                variant="h6"
-                gutterBottom
-                component="div"
               >
                 {row.info}
-              </Typography>
-              <Table size="small" aria-label="purchases"></Table>
+              </Table>
             </Box>
           </Collapse>
         </TableCell>
